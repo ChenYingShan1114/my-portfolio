@@ -8,18 +8,15 @@
     let currentPath = window.location.pathname;
     let langSwitchBtn = document.getElementById("lang-switch");
 
-    // 你的 GitHub Pages 項目名稱
-    let basePath = "/my-portfolio";
-
-    if (currentPath.startsWith(basePath + "/en/")) {
-      langSwitchBtn.href = currentPath.replace(basePath + "/en/", basePath + "/zh-TW/");
+    if (currentPath.startsWith("/my-portfolio/en/")) {
+      langSwitchBtn.href = currentPath.replace("/en/", "/zh-TW/");
       langSwitchBtn.innerText = "繁體中文";
-    } else if (currentPath.startsWith(basePath + "/zh-TW/")) {
-      langSwitchBtn.href = currentPath.replace(basePath + "/zh-TW/", basePath + "/en/");
+    } else if (currentPath.startsWith("/my-portfolio/zh-TW/")) {
+      langSwitchBtn.href = currentPath.replace("/zh-TW/", "/en/");
       langSwitchBtn.innerText = "English";
     } else {
-      // 預設語言為英文，切換到中文
-      langSwitchBtn.href = basePath + "/zh-TW" + currentPath.replace(basePath, "");
+      // 預設語言（可能是英文）
+      langSwitchBtn.href = currentPath + "/zh-TW";
       langSwitchBtn.innerText = "繁體中文";
     }
   });
