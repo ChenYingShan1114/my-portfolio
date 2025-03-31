@@ -53,15 +53,15 @@ nav:
       url: "/en/animation/"
     - title: "About Me"
       url: "/en/about/"
-  zh:
+  zh-TW:
     - title: "首頁"
-      url: "/zh/"
+      url: "/zh-TW/"
     - title: "物理專案"
-      url: "/zh/physics/"
+      url: "/zh-TW/physics/"
     - title: "動畫專案"
-      url: "/zh/animation/"
+      url: "/zh-TW/animation/"
     - title: "關於我"
-      url: "/zh/about/"
+      url: "/zh-TW/about/"
 
 
 ## => Author and Social
