@@ -1,9 +1,10 @@
 ---
 layout: default
 lang: en
-title: "main"
+title: "Home"
 ---
 
+link: /en/
 # welcome 
 
 projects
