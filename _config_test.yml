@@ -1,0 +1,17 @@
+title: "My Portfolio"
+description: "This site showcases my physics and animation-related projects."
+url: "https://your-username.github.io"
+theme: "jekyll-TeXt-theme"
+lang: "en"  # 預設語言設為英文
+
+# SEO 設置
+seo:
+  title: "My Portfolio - Physics and Animation"
+  description: "This site showcases my physics and animation-related projects."
+  keywords: "physics, animation, portfolio, education, work experience"
+
+# 多語言設置
+locale: "en"
+languages:
+  - en
+  - zh-TW
