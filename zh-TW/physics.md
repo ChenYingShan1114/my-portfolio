@@ -1,11 +1,8 @@
 ---
-layout: page
-title: "Physics Projects"
+layout: default
 lang: zh-TW
-permalink: /physics/
+title: "首頁"
 ---
-# Physics Projects
-Here are some of my physics-related works:
 
-- [Plasma Simulation](./physics/plasma-simulation)
-- [Computational Physics TA](./physics/comp-physics-ta)
+# 歡迎來到我的作品集
+物理
