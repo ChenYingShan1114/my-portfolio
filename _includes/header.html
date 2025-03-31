@@ -1,6 +1,25 @@
 <div class="language-switcher">
   <a href="{{ site.baseurl }}/en/">🇬🇧 English</a> | <a href="{{ site.baseurl }}/zh-TW/">🇹🇼 繁體中文</a>
 </div>
+<a href="#" id="lang-switch">切換語言</a>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let currentPath = window.location.pathname;
+    let langSwitchBtn = document.getElementById("lang-switch");
+
+    if (currentPath.startsWith("/my-portfolio/en/")) {
+      langSwitchBtn.href = currentPath.replace("/en/", "/zh-TW/");
+      langSwitchBtn.innerText = "繁體中文";
+    } else if (currentPath.startsWith("/my-portfolio/zh-TW/")) {
+      langSwitchBtn.href = currentPath.replace("/zh-TW/", "/en/");
+      langSwitchBtn.innerText = "English";
+    } else {
+      // 預設語言（可能是英文）
+      langSwitchBtn.href = "/my-portfolio/zh-TW" + currentPath;
+      langSwitchBtn.innerText = "繁體中文";
+    }
+  });
+</script>
 {%- if include.theme == 'dark' -%}
   <header class="header header--dark" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
 {%- elsif include.theme == 'light' -%}
