@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 lang: zh-TW
 title: "物理專案"
 ---
