@@ -12,3 +12,10 @@ title: "首頁"
 - [動畫相關專案](animation.md)
 - [照片集](gallery.md)
 - [學歷與工作經驗](experience.md)
+
+<nav>
+  <ul>
+    <li><a href="/en/">English</a></li>
+    <li><a href="/zh-TW/">中文</a></li>
+  </ul>
+</nav>
