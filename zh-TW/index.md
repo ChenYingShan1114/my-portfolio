@@ -15,7 +15,7 @@ title: "首頁"
 
 <nav>
   <ul>
-    <li><a href="/en/">English</a></li>
-    <li><a href="/zh-TW/">中文</a></li>
+     <li><a href="{{ site.baseurl }}/en/">English</a></li>
+     <li><a href="{{ site.baseurl }}/zh-TW/">中文</a></li>
   </ul>
 </nav>
