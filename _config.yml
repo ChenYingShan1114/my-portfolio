@@ -42,6 +42,14 @@ languages:
   - en
   - zh-TW
 
+# Navigation Bar
+navs:
+  home: /
+  physics-projects: /physics/
+  animation-projects: /animation/
+  gallery: /gallery/
+  about: /about/
+
 ## => Author and Social
 ##############################
 author:
