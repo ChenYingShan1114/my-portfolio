@@ -2,20 +2,24 @@
   <a href="{{ site.baseurl }}/en/">🇬🇧 English</a> | <a href="{{ site.baseurl }}/zh-TW/">🇹🇼 繁體中文</a>
 </div>
 <a href="#" id="lang-switch">切換語言</a>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     let currentPath = window.location.pathname;
     let langSwitchBtn = document.getElementById("lang-switch");
 
-    if (currentPath.startsWith("/my-portfolio/en/")) {
-      langSwitchBtn.href = currentPath.replace("/en/", "/zh-TW/");
+    // 你的 GitHub Pages 項目名稱
+    let basePath = "/my-portfolio";
+
+    if (currentPath.startsWith(basePath + "/en/")) {
+      langSwitchBtn.href = currentPath.replace(basePath + "/en/", basePath + "/zh-TW/");
       langSwitchBtn.innerText = "繁體中文";
-    } else if (currentPath.startsWith("/my-portfolio/zh-TW/")) {
-      langSwitchBtn.href = currentPath.replace("/zh-TW/", "/en/");
+    } else if (currentPath.startsWith(basePath + "/zh-TW/")) {
+      langSwitchBtn.href = currentPath.replace(basePath + "/zh-TW/", basePath + "/en/");
       langSwitchBtn.innerText = "English";
     } else {
-      // 預設語言（可能是英文）
-      langSwitchBtn.href = "/my-portfolio/zh-TW" + currentPath;
+      // 預設語言為英文，切換到中文
+      langSwitchBtn.href = basePath + "/zh-TW" + currentPath.replace(basePath, "");
       langSwitchBtn.innerText = "繁體中文";
     }
   });
