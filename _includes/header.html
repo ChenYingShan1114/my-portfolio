@@ -9,14 +9,14 @@
     let langSwitchBtn = document.getElementById("lang-switch");
 
     if (currentPath.startsWith("/my-portfolio/en")) {
-      langSwitchBtn.href = currentPath.replace("/en", "/zh-TW");
+      langSwitchBtn.href = currentPath.replace("/en/", "/zh-TW/");
       langSwitchBtn.innerText = "繁體中文";
-    } else if (currentPath.startsWith("/my-portfolio/zh-TW")) {
-      langSwitchBtn.href = currentPath.replace("/zh-TW", "/en");
+    } else if (currentPath.startsWith("/my-portfolio/zh-TW/")) {
+      langSwitchBtn.href = currentPath.replace("/zh-TW/", "/en/");
       langSwitchBtn.innerText = "English";
     } else {
       // 預設語言（可能是英文）
-      langSwitchBtn.href = currentPath.replace("/my-portfolio/", "/my-portfolio/zh-TW");
+      langSwitchBtn.href = currentPath.replace("/my-portfolio/", "/my-portfolio/zh-TW/");
       langSwitchBtn.innerText = "繁體中文";
     }
   });

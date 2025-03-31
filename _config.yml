@@ -46,22 +46,22 @@ languages:
 nav:
   en:
     - title: "Home"
-      url: "/en"
+      url: "/en/"
     - title: "Physics Projects"
-      url: "/en/physics"
+      url: "/en/physics/"
     - title: "Animation Projects"
-      url: "/en/animation"
+      url: "/en/animation/"
     - title: "About Me"
-      url: "/en/about"
+      url: "/en/about/"
   zh-TW:
     - title: "首頁"
-      url: "/zh-TW"
+      url: "/zh-TW/"
     - title: "物理專案"
-      url: "/zh-TW/physics"
+      url: "/zh-TW/physics/"
     - title: "動畫專案"
-      url: "/zh-TW/animation"
+      url: "/zh-TW/animation/"
     - title: "關於我"
-      url: "/zh-TW/about"
+      url: "/zh-TW/about/"
 
 
 ## => Author and Social
