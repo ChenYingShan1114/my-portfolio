@@ -43,12 +43,25 @@ languages:
   - zh-TW
 
 # Navigation Bar
-navs:
-  home: /
-  physics-projects: /physics/
-  animation-projects: /animation/
-  gallery: /gallery/
-  about: /about/
+nav:
+  en:
+    - title: "Home"
+      url: "/en/"
+    - title: "Physics Projects"
+      url: "/en/physics/"
+    - title: "Animation Projects"
+      url: "/en/animation/"
+    - title: "About Me"
+      url: "/en/about/"
+  zh:
+    - title: "首頁"
+      url: "/zh/"
+    - title: "物理專案"
+      url: "/zh/physics/"
+    - title: "動畫專案"
+      url: "/zh/animation/"
+    - title: "關於我"
+      url: "/zh/about/"
 
 ## => Author and Social
 ##############################

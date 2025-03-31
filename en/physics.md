@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Physics Projects"
-lang: zh-TW
+lang: en
 permalink: /physics/
 ---
 # Physics Projects
