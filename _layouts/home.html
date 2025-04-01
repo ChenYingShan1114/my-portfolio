@@ -34,49 +34,10 @@ articles:
   show_info: true
 ---
 <div class="layout--home">
-  <a href="#" onclick="switchLang('en')">English</a>
-  <a href="#" onclick="switchLang('zh-TW')">繁體中文</a>
-    {%- include paginator.html -%}
+  {%- include paginator.html -%}
 </div>
 <script>
   {%- include scripts/home.js -%}
-  document.addEventListener("DOMContentLoaded", function() {
-        let currentPath = window.location.pathname;
-        let langSwitchBtn = document.getElementById("lang-switch");
-        let lang = "en";  // 預設語言
-
-        // 檢查網址決定語言
-        if (currentPath.includes("/zh-TW/")) {
-            lang = "zh-TW";
-        }
-
-        // 顯示正確的語言內容
-        document.querySelectorAll("[data-lang]").forEach(el => {
-            el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
-        });
-
-        // 語言切換按鈕
-        langSwitchBtn.innerText = (lang === "en") ? "繁體中文" : "English";
-        langSwitchBtn.href = (lang === "en") 
-            ? currentPath.replace("/en/", "/zh-TW/") 
-            : currentPath.replace("/zh-TW/", "/en/");
-    });
-    function switchLang(lang) {
-    document.querySelectorAll('[data-lang]').forEach(el => {
-        if (el.getAttribute('data-lang') === lang) {
-            el.style.display = 'block';
-        } else {
-            el.style.display = 'none';
-        }
-    });
-    localStorage.setItem('lang', lang); // 記住使用者選擇的語言
-}
-
-// 頁面載入時自動應用使用者的語言偏好
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('lang') || 'en';
-    switchLang(savedLang);
-});
 </script>
 
 {{ content }}
