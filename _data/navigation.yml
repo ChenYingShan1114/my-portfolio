@@ -75,4 +75,4 @@ header:
       fr-LU   : *FR
       tr      : &TR       Arşivdekiler
       # @end locale config
-    url: /physics/
+    url: /physics.html
