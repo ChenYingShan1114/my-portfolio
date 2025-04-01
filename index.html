@@ -3,10 +3,9 @@ layout: home
 # articles:
 #   excerpt_type: html
 title: "Welcome to My Portfolio"
+lang: en
 ---
 
-<!-- 語言切換按鈕 -->
-<a href="#" id="lang-switch">繁體中文</a>
 
 <!-- 英文內容 -->
 <div data-lang="en">
@@ -19,30 +18,6 @@ title: "Welcome to My Portfolio"
     <h1>歡迎來到我的作品集</h1>
     <p>這是我的動畫與物理專案集合。</p>
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let currentPath = window.location.pathname;
-        let langSwitchBtn = document.getElementById("lang-switch");
-        let lang = "en";  // 預設語言
-  
-        // 檢查網址決定語言
-        if (currentPath.includes("/zh-TW/")) {
-            lang = "zh-TW";
-        }
-  
-        // 顯示正確的語言內容
-        document.querySelectorAll("[data-lang]").forEach(el => {
-            el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
-        });
-  
-        // 語言切換
-        langSwitchBtn.innerText = (lang === "en") ? "繁體中文" : "English";
-        langSwitchBtn.href = (lang === "en") 
-            ? currentPath.replace("/en/", "/zh-TW/") 
-            : currentPath.replace("/zh-TW/", "/en/");
-    });
-  </script>
-
 
 # Welcome!
 This is my personal website where I showcase my **animation** and **physics** projects.
