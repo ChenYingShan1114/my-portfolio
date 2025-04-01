@@ -34,8 +34,9 @@ articles:
   show_info: true
 ---
 <div class="layout--home">
-  <a href="#" id="lang-switch">繁體中文</a>
-  {%- include paginator.html -%}
+  <a href="#" onclick="switchLang('en')">English</a>
+  <a href="#" onclick="switchLang('zh-TW')">繁體中文</a>
+    {%- include paginator.html -%}
 </div>
 <script>
   {%- include scripts/home.js -%}
@@ -60,6 +61,22 @@ articles:
             ? currentPath.replace("/en/", "/zh-TW/") 
             : currentPath.replace("/zh-TW/", "/en/");
     });
+    function switchLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        if (el.getAttribute('data-lang') === lang) {
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'none';
+        }
+    });
+    localStorage.setItem('lang', lang); // 記住使用者選擇的語言
+}
+
+// 頁面載入時自動應用使用者的語言偏好
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('lang') || 'en';
+    switchLang(savedLang);
+});
 </script>
 
 {{ content }}
