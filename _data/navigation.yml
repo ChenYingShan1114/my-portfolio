@@ -70,7 +70,7 @@ header:
   
   - titles:
       # @start locale config
-      en      : &EN       Animations
+      en      : &EN       Animation
       en-GB   : *EN
       en-US   : *EN
       en-CA   : *EN
@@ -83,7 +83,7 @@ header:
       zh-TW   : *ZH_HANT
       zh-HK   : *ZH_HANT
       # @end locale config
-    url: /animations.html
+    url: /animation.html
 
   - titles:
       # @start locale config
