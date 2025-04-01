@@ -39,8 +39,12 @@ seo:
 # others setting
 locale: "en"
 languages:
-  - en
-  - zh-TW
+  en:
+    name: "English"
+    path: "/en"
+  zh-TW:
+    name: "繁體中文"
+    path: "zh-TW"
 
 # Navigation Bar
 nav:
