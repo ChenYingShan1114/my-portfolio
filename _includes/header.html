@@ -1,7 +1,7 @@
-<div class="language-switcher">
+<!-- <div class="language-switcher">
   <a href="{{ site.baseurl }}/en/">🇬🇧 English</a> | <a href="{{ site.baseurl }}/zh-TW/">🇹🇼 繁體中文</a>
 </div>
-<a href="#" id="lang-switch">切換語言</a>
+<a href="#" id="lang-switch">切換語言</a> -->
 
 <!-- <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -21,7 +21,8 @@
     }
   });
 </script> -->
-<script>
+
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function() {
       let currentPath = window.location.pathname;
       let langSwitchBtn = document.getElementById("lang-switch");
@@ -43,7 +44,7 @@
           ? currentPath.replace("/en/", "/zh-TW/") 
           : currentPath.replace("/zh-TW/", "/en/");
   });
-</script>
+</script> -->
 
 {%- if include.theme == 'dark' -%}
   <header class="header header--dark" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
