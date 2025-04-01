@@ -2,26 +2,28 @@
 layout: home
 # articles:
 #   excerpt_type: html
-title: "Physics Projects"
+title: "Animation Projects"
 lang: en
-permalink: /my-portfolio/physics/
+permalink: /my-portfolio/animation/
+
 ---
 
 
 <!-- 英文內容 -->
 <div data-lang="en">
-    # Welcome to My Physics Projects
-    This is my physics project.
+    # Welcome to My Animations Projects
+    This is my animations project.
 </div>
 
 <!-- 繁體中文內容 -->
 <div data-lang="zh-TW" style="display: none;">
-    # 歡迎來到物理
-    這是我的物理專案集合。
+    # 歡迎來到動畫
+    這是我的動畫專案集合。
 </div>
 
-<h1>Physics Projects</h1>
-{% for project in site.physics %}
+
+<h1>Animation Projects</h1>
+{% for project in site.animation %}
     <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
     <p>{{ project.excerpt }}</p>
 {% endfor %}
