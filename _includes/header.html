@@ -1,52 +1,11 @@
-<!-- <div class="language-switcher">
-  <a href="{{ site.baseurl }}/en/">🇬🇧 English</a> | <a href="{{ site.baseurl }}/zh-TW/">🇹🇼 繁體中文</a>
+<!-- 繁體中文內容 -->
+<div data-lang="zh-TW" style="display: none;">
+  <a href="#" onclick="switchLang('en')">English</a>
 </div>
-<a href="#" id="lang-switch">切換語言</a> -->
-
-<!-- <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    let currentPath = window.location.pathname;
-    let langSwitchBtn = document.getElementById("lang-switch");
-
-    if (currentPath.startsWith("/my-portfolio/en")) {
-      langSwitchBtn.href = currentPath.replace("/en/", "/zh-TW/");
-      langSwitchBtn.innerText = "繁體中文";
-    } else if (currentPath.startsWith("/my-portfolio/zh-TW/")) {
-      langSwitchBtn.href = currentPath.replace("/zh-TW/", "/en/");
-      langSwitchBtn.innerText = "English";
-    } else {
-      // 預設語言（可能是英文）
-      langSwitchBtn.href = currentPath.replace("/my-portfolio/", "/my-portfolio/zh-TW/");
-      langSwitchBtn.innerText = "繁體中文";
-    }
-  });
-</script> -->
-
-<!-- <script>
-  document.addEventListener("DOMContentLoaded", function() {
-      let currentPath = window.location.pathname;
-      let langSwitchBtn = document.getElementById("lang-switch");
-      let lang = "en";  // 預設語言
-
-      // 檢查網址決定語言
-      if (currentPath.includes("/zh-TW/")) {
-          lang = "zh-TW";
-      }
-
-      // 顯示正確的語言內容
-      document.querySelectorAll("[data-lang]").forEach(el => {
-          el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
-      });
-
-      // 語言切換
-      langSwitchBtn.innerText = (lang === "en") ? "繁體中文" : "English";
-      langSwitchBtn.href = (lang === "en") 
-          ? currentPath.replace("/en/", "/zh-TW/") 
-          : currentPath.replace("/zh-TW/", "/en/");
-  });
-</script> -->
-<a href="#" onclick="switchLang('en')">English</a>
-<a href="#" onclick="switchLang('zh-TW')">繁體中文</a>
+<!-- 英文內容 -->
+<div data-lang="en">
+  <a href="#" onclick="switchLang('zh-TW')">繁體中文</a>
+</div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         let currentPath = window.location.pathname;
