@@ -231,14 +231,6 @@ defaults:
       show_subscribe: true
       pageview: true
 
-collections:
-  physics:
-    output: true
-    permalink: /my-portfolio/physics/:name/
-  animation:
-    output: true
-    permalink: /my-portfolio/animation/:name/
-
 
 ## => Plugins
 ##############################
