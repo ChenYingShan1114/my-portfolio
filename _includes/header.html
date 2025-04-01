@@ -3,7 +3,7 @@
 </div>
 <a href="#" id="lang-switch">切換語言</a>
 
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function() {
     let currentPath = window.location.pathname;
     let langSwitchBtn = document.getElementById("lang-switch");
@@ -20,7 +20,31 @@
       langSwitchBtn.innerText = "繁體中文";
     }
   });
+</script> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      let currentPath = window.location.pathname;
+      let langSwitchBtn = document.getElementById("lang-switch");
+      let lang = "en";  // 預設語言
+
+      // 檢查網址決定語言
+      if (currentPath.includes("/zh-TW/")) {
+          lang = "zh-TW";
+      }
+
+      // 顯示正確的語言內容
+      document.querySelectorAll("[data-lang]").forEach(el => {
+          el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
+      });
+
+      // 語言切換
+      langSwitchBtn.innerText = (lang === "en") ? "繁體中文" : "English";
+      langSwitchBtn.href = (lang === "en") 
+          ? currentPath.replace("/en/", "/zh-TW/") 
+          : currentPath.replace("/zh-TW/", "/en/");
+  });
 </script>
+
 {%- if include.theme == 'dark' -%}
   <header class="header header--dark" {%- if include.background -%} style="background: {{ include.background }};" {%- endif -%}>
 {%- elsif include.theme == 'light' -%}
