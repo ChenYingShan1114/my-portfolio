@@ -28,46 +28,36 @@ titles:
 
 <div class="layout--archive js-all">
   {%- assign all_posts = site.posts | concat: site.physics | concat: site.animation | sort: 'date' | reverse -%}
-  
-  <!-- Create arrays for each collection's tags -->
-  {%- assign physics_tags = "" | split: "" -%}
-  {%- assign animation_tags = "" | split: "" -%}
-  
-  <!-- Collect physics tags -->
-  {%- for post in site.physics -%}
-    {%- assign physics_tags = physics_tags | concat: post.tags -%}
+  {%- assign all_tags = "" | split: "" -%}
+  {%- for post in all_posts -%}
+    {%- assign all_tags = all_tags | concat: post.tags -%}
   {%- endfor -%}
-  {%- assign physics_tags = physics_tags | uniq | sort -%}
-  
-  <!-- Collect animation tags -->
-  {%- for post in site.animation -%}
-    {%- assign animation_tags = animation_tags | concat: post.tags -%}
+  {%- assign all_tags = all_tags | uniq | sort -%}
+  {%- assign _tag_max_size = 1.0 -%}
+  {%- assign _tag_min_size = 1.0 -%}
+  {%- for tag in all_tags -%}
+    {%- assign _tag_cur_size = all_posts | where_exp: "post", "post.tags contains tag" | size -%}
+    {%- if _tag_cur_size > _tag_max_size -%}
+      {%- assign _tag_max_size = _tag_cur_size -%}
+    {%- endif -%}
+    {%- if _tag_cur_size < _tag_min_size -%}
+      {%- assign _tag_min_size = _tag_cur_size -%}
+    {%- endif -%}
   {%- endfor -%}
-  {%- assign animation_tags = animation_tags | uniq | sort -%}
+  {%- assign _tag_range = _tag_max_size | minus: _tag_min_size | plus: 1 -%}
   
-  <!-- Display physics tags -->
-  <div class="archive__group">
-    <h3>Physics Tags:</h3>
-    {%- for tag in physics_tags -%}
-      {%- assign tag_posts = site.physics | where: "tags", tag -%}
-      <button type="button" class="button button--secondary button--pill tag tag-physics" data-encode="{{ tag | strip | url_encode }}" data-tag="{{ tag | strip }}">
-        {{ tag | strip }} <div class="tag__count">{{ tag_posts.size }}</div>
+  <div class="site-tags js-tags">
+    <button type="button" class="button button--secondary button--pill tag-button" data-encode="">
+      Show All<div class="tag__count">{{ all_posts | size }}</div>
+    </button>
+    {%- for tag in all_tags -%}
+      {%- assign _tag_cur_size = all_posts | where_exp: "post", "post.tags contains tag" | size -%}
+      {%- assign _tag_size_ratio = _tag_cur_size | minus: _tag_min_size | divided_by: _tag_range -%}
+      <button type="button" class="button button--pill tag-button" data-encode="{{ tag | strip | url_encode }}" data-tag="{{ tag | strip }}">
+        {{ tag | strip }} <div class="tag__count">{{ _tag_cur_size }}</div>
       </button>
     {%- endfor -%}
   </div>
-  
-  <!-- Display animation tags -->
-  <div class="archive__group">
-    <h3>Animation Tags:</h3>
-    {%- for tag in animation_tags -%}
-      {%- assign tag_posts = site.animation | where: "tags", tag -%}
-      <button type="button" class="button button--secondary button--pill tag tag-animation" data-encode="{{ tag | strip | url_encode }}" data-tag="{{ tag | strip }}">
-        {{ tag | strip }} <div class="tag__count">{{ tag_posts.size }}</div>
-      </button>
-    {%- endfor -%}
-  </div>
-  
-  <!-- Display all posts -->
   <div class="js-result layout--archive__result d-none">
     {%- include article-list.html articles=all_posts type='brief' show_info=true reverse=true group_by='year' -%}
   </div>
