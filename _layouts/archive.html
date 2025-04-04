@@ -28,6 +28,11 @@ titles:
 
 <div class="layout--archive js-all">
   {%- assign all_posts = site.posts | concat: site.physics | concat: site.animation | sort: 'date' | reverse -%}
+  {%- assign _tags = site.tags -%}
+  {%- assign physics_tags = site.physics | map: "tags" | join: "," | split: "," | uniq -%}
+  {%- assign animation_tags = site.animation | map: "tags" | join: "," | split: "," | uniq -%}
+  {%- assign all_tags = _tags | concat: physics_tags | concat: animation_tags | uniq | sort -%}
+  {%- assign site.tags = all_tags -%}
   {%- include tags.html -%}
   <div class="js-result layout--archive__result d-none">
     {%- include article-list.html articles=all_posts type='brief' show_info=true reverse=true group_by='year' -%}
@@ -35,7 +40,7 @@ titles:
 </div>
 
 <script>
-  {%- include scripts/archieve.js -%}
+  {%- include scripts/archive.js -%}
 </script>
 
 {{ content }}
