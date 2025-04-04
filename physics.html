@@ -11,15 +11,27 @@ lang: en
     <h1>Welcome to My Physics Projects</h1>
     <p>This is my physics project collection.</p>
     
-    <div class="grid">
+    <div class="articles">
         {% for post in site.physics %}
-        <div class="grid-item">
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
-            <div class="post-excerpt">
-                {{ post.content | split: '<!--more-->' | first }}
+        <article class="article">
+            <div class="article-item">
+                <h2 class="article-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h2>
+                <div class="article-meta">
+                    <span class="article-date">
+                        <i class="icon-calendar"></i>
+                        {{ post.date | date: "%B %-d, %Y" }}
+                    </span>
+                </div>
+                <div class="article-content">
+                    {{ post.content | split: '<!--more-->' | first }}
+                    <div class="article-footer">
+                        <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </article>
         {% endfor %}
     </div>
 </div>
@@ -29,15 +41,27 @@ lang: en
     <h1>歡迎來到物理專案</h1>
     <p>這是我的物理專案集合。</p>
     
-    <div class="grid">
+    <div class="articles">
         {% for post in site.physics %}
-        <div class="grid-item">
-            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-            <p class="post-meta">{{ post.date | date: "%Y年%-m月%-d日" }}</p>
-            <div class="post-excerpt">
-                {{ post.content | split: '<!--more-->' | first }}
+        <article class="article">
+            <div class="article-item">
+                <h2 class="article-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h2>
+                <div class="article-meta">
+                    <span class="article-date">
+                        <i class="icon-calendar"></i>
+                        {{ post.date | date: "%Y年%-m月%-d日" }}
+                    </span>
+                </div>
+                <div class="article-content">
+                    {{ post.content | split: '<!--more-->' | first }}
+                    <div class="article-footer">
+                        <a href="{{ post.url | relative_url }}" class="read-more">閱讀更多</a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </article>
         {% endfor %}
     </div>
 </div>
