@@ -46,6 +46,15 @@ languages:
     name: "繁體中文"
     path: "zh-TW"
 
+# Collections
+collections:
+  physics:
+    output: true
+    permalink: /physics/:path/
+  animation:
+    output: true
+    permalink: /animation/:path/
+
 
 ## => Author and Social
 ##############################
@@ -113,7 +122,7 @@ chart: # false (default), true
 ## => Paginate
 ##############################
 paginate: 8
-paginate_path: _physics #/page:num # don't change this unless for special need
+paginate_path: /page:num # don't change this unless for special need
 
 
 ## => Sources

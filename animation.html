@@ -6,22 +6,38 @@ title: "Animation Projects"
 lang: en
 ---
 
-
-<!-- 英文內容 -->
+<!-- English content -->
 <div data-lang="en">
-    # Welcome to My Animation Projects
-    This is my animation project.
+    <h1>Welcome to My Animation Projects</h1>
+    <p>This is my animation project collection.</p>
+    
+    <div class="grid">
+        {% for post in site.animation %}
+        <div class="grid-item">
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+            <div class="post-excerpt">
+                {{ post.content | split: '<!--more-->' | first }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
-<!-- 繁體中文內容 -->
+<!-- Traditional Chinese content -->
 <div data-lang="zh-TW" style="display: none;">
-    # 歡迎來到動畫!
-    這是我的動畫專案集合。
+    <h1>歡迎來到動畫專案</h1>
+    <p>這是我的動畫專案集合。</p>
+    
+    <div class="grid">
+        {% for post in site.animation %}
+        <div class="grid-item">
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p class="post-meta">{{ post.date | date: "%Y年%-m月%-d日" }}</p>
+            <div class="post-excerpt">
+                {{ post.content | split: '<!--more-->' | first }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-
-
-<h1>Animation Projects</h1>
-{% for project in site.animation %}
-    <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
-    <p>{{ project.excerpt }}</p>
-{% endfor %}
