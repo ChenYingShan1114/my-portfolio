@@ -28,6 +28,23 @@ titles:
 
 <div class="layout--archive js-all">
   {%- assign all_posts = site.posts | concat: site.physics | concat: site.animation | sort: 'date' | reverse -%}
+  {%- assign _tags = site.tags -%}
+  {%- for post in site.physics -%}
+    {%- for tag in post.tags -%}
+      {%- assign tag_posts = site.physics | where: "tags", tag -%}
+      {%- assign _tags = _tags | push: tag -%}
+      {%- assign _tags[tag] = tag_posts -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- for post in site.animation -%}
+    {%- for tag in post.tags -%}
+      {%- assign tag_posts = site.animation | where: "tags", tag -%}
+      {%- assign _tags = _tags | push: tag -%}
+      {%- assign _tags[tag] = tag_posts -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- assign site.tags = _tags | uniq | sort -%}
+  console.log(site.tags);
   {%- include tags.html -%}
   <div class="js-result layout--archive__result d-none">
     {%- include article-list.html articles=all_posts type='brief' show_info=true reverse=true group_by='year' -%}
