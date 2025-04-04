@@ -50,10 +50,10 @@ languages:
 collections:
   physics:
     output: true
-    permalink: /physics/:path/
+    permalink: /physics/:year/:month/:day/:title/
   animation:
     output: true
-    permalink: /animation/:path/
+    permalink: /animation/:year/:month/:day/:title/
 
 
 ## => Author and Social
