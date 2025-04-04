@@ -51,9 +51,11 @@ collections:
   physics:
     output: true
     permalink: /physics/:year/:month/:day/:title/
+    tags: true
   animation:
     output: true
     permalink: /animation/:year/:month/:day/:title/
+    tags: true
 
 
 ## => Author and Social
@@ -229,40 +231,21 @@ exclude:
 defaults:
   - scope:
       path: ""
-      type: posts
+      type: "posts"
     values:
-      layout: article
-      sharing: true
-      license: true
-      aside:
-        toc: true
-      show_edit_on_github: true
-      show_subscribe: true
-      pageview: true
+      layout: "article"
   - scope:
       path: ""
-      type: physics
+      type: "physics"
     values:
-      layout: article
-      sharing: true
-      license: true
-      aside:
-        toc: true
-      show_edit_on_github: true
-      show_subscribe: true
-      pageview: true
+      layout: "article"
+      tags: []
   - scope:
       path: ""
-      type: animation
+      type: "animation"
     values:
-      layout: article
-      sharing: true
-      license: true
-      aside:
-        toc: true
-      show_edit_on_github: true
-      show_subscribe: true
-      pageview: true
+      layout: "article"
+      tags: []
 
 
 ## => Plugins
