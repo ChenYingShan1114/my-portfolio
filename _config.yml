@@ -236,26 +236,14 @@ defaults:
       path: ""
       type: "physics"
     values:
-      layout: article
-      sharing: true
-      license: true
-      aside:
-        toc: true
-      show_edit_on_github: true
-      show_subscribe: true
-      pageview: true
+      layout: "article"
+      type: "posts"
   - scope:
       path: ""
       type: "animation"
     values:
-      layout: article
-      sharing: true
-      license: true
-      aside:
-        toc: true
-      show_edit_on_github: true
-      show_subscribe: true
-      pageview: true
+      layout: "article"
+      type: "posts"
 
 
 ## => Plugins
