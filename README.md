@@ -61,6 +61,9 @@ Use main as dev. version, gh-pages as prod. version. Create branch from main to 
     git branch -d new-feature
 
 ## Add new collection
+### 0. check paginate folder in ./_config.yml
+    paginate_path: "/:collection/page:num/"
+
 ### 1. set new collection in ./_config.yml
     collections:
       <new-collection-name>:
@@ -82,7 +85,7 @@ Use main as dev. version, gh-pages as prod. version. Create branch from main to 
           show_subscribe: true
           pageview: true
 
-### 2. set new collection main page path in ./_data/navigation.yml
+### 3. set new collection main page path in ./_data/navigation.yml
     header:
       - titles:
           # @start locale config
@@ -101,7 +104,7 @@ Use main as dev. version, gh-pages as prod. version. Create branch from main to 
           # @end locale config
         url: /<new-collection-name>.html
 
-### 3. add new collection main page file ./<new-collection-name>.html
+### 4. add new collection main page file ./<new-collection-name>.html
 
     ---
     layout: home
@@ -130,7 +133,7 @@ Use main as dev. version, gh-pages as prod. version. Create branch from main to 
         這是我的<new-collection-name>專案集合。
     </div>
 
-### 4. create new collection posts folder ./_<new-collection-name> and add new collection posts ./_<new-collection-name>/<year>-<month>-<day>-<title>.md
+### 5. create new collection posts folder ./_<new-collection-name> and add new collection posts ./_<new-collection-name>/<year>-<month>-<day>-<title>.md
     ---
     title: prac 1
     tags: practice
