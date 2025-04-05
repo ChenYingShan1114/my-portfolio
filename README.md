@@ -163,4 +163,13 @@ Use main as dev. version, gh-pages as prod. version. Create branch from main to 
     {%- endfor -%}
     ...
 
+## About language
+### 1. in the posts list page, control context and language of the excerpt
+**excerpt_type** set the excerpt type. Choose html or text. If html, **show_excerpt** shows the text before html tag <!--more--> in each markdown file. 
+    ---
+    layout: home
+    articles:
+      show_excerpt: true
+      excerpt_type: html
+    ---
 
