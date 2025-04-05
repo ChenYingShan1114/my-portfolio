@@ -27,7 +27,7 @@ titles:
 ---
 
 <div class="layout--archive js-all">
-  {%- assign all_posts = site.posts | concat: site.physics | concat: site.animation | sort: 'date' | reverse -%}
+  {%- assign all_posts = site.posts | concat: site.physics | concat: site.animation | concat: site.practice | sort: 'date' | reverse -%}
   
   {%- comment -%} Combine tags from all collections {%- endcomment -%}
   {%- assign all_tags = "" | split: "" -%}
@@ -56,6 +56,17 @@ titles:
       {%- unless all_tags contains tag -%}
         {%- assign all_tags = all_tags | push: tag -%}
         {%- assign posts_with_tag = site.animation | where: "tags", tag -%}
+        {%- assign tag_posts = tag_posts | push: posts_with_tag -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endfor -%}
+
+  {%- comment -%} Get tags from practice posts {%- endcomment -%}
+  {%- for post in site.practice -%}
+    {%- for tag in post.tags -%}
+      {%- unless all_tags contains tag -%}
+        {%- assign all_tags = all_tags | push: tag -%}
+        {%- assign posts_with_tag = site.practice | where: "tags", tag -%}
         {%- assign tag_posts = tag_posts | push: posts_with_tag -%}
       {%- endunless -%}
     {%- endfor -%}
