@@ -147,5 +147,20 @@ Use main as dev. version, gh-pages as prod. version. Create branch from main to 
     練習1！！
     </div>
 
+### 6. set <new-collection-name> post's tag in ./archive.html
+    ...
+    {%- assign all_posts = site.posts | concat: site.<new-collection-name> | sort: 'date' | reverse -%}
+    ...
+    {%- comment -%} Get tags from <new-collection-name> posts {%- endcomment -%}
+    {%- for post in site.<new-collection-name> -%}
+      {%- for tag in post.tags -%}
+      {%- unless all_tags contains tag -%}
+        {%- assign all_tags = all_tags | push: tag -%}
+        {%- assign posts_with_tag = site.<new-collection-name> | where: "tags", tag -%}
+        {%- assign tag_posts = tag_posts | push: posts_with_tag -%}
+      {%- endunless -%}
+      {%- endfor -%}
+    {%- endfor -%}
+    ...
 
 
