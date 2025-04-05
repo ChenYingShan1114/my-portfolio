@@ -4,6 +4,7 @@ https://chenyingshan1114.github.io/my-portfolio/
 ## Notice:
 Use main as dev. version, gh-pages as prod. version. Create branch from main to add new features and debug.
 
+## Update web
 ### 1. make sure the local version is up-to-date
     # 切換到 main 分支（或你主要開發的分支）
     git checkout main
@@ -58,3 +59,90 @@ Use main as dev. version, gh-pages as prod. version. Create branch from main to 
 ### 9. delete local branch
     git checkout main
     git branch -d new-feature
+
+## Add new collection
+### 1. set new collection in ./_config.yml
+    collections:
+      <new-collection-name>:
+        output: true
+        permalink: /<new-collection-name>/:year/:month/:day/:title/
+
+### 2. set new collection's post layout in ./_config.yml
+    defaults:
+      - scope:
+          path: ""
+          type: "<new-collection-name>"
+        values:
+          layout: article
+          sharing: true
+          license: true
+          aside:
+            toc: true
+          show_edit_on_github: true
+          show_subscribe: true
+          pageview: true
+
+### 2. set new collection main page path in ./_data/navigation.yml
+    header:
+      - titles:
+          # @start locale config
+          en      : &EN       <new-collection-name>
+          en-GB   : *EN
+          en-US   : *EN
+          en-CA   : *EN
+          en-AU   : *EN
+          zh-Hans : &ZH_HANS  <new-collection-name>
+          zh      : *ZH_HANS
+          zh-CN   : *ZH_HANS
+          zh-SG   : *ZH_HANS
+          zh-Hant : &ZH_HANT  <new-collection-name>
+          zh-TW   : *ZH_HANT
+          zh-HK   : *ZH_HANT
+          # @end locale config
+        url: /<new-collection-name>.html
+
+### 3. add new collection main page file ./<new-collection-name>.html
+
+    ---
+    layout: home
+    # articles:
+    #   excerpt_type: html
+    title: "<new-collection-name> Projects"
+    lang: en
+    articles:
+      data_source: <new-collection-name>
+      article_type: BlogPosting
+      show_cover: false
+      show_excerpt: true
+      show_readmore: true
+      show_info: true
+    ---
+
+    <!-- English content -->
+    <div data-lang="en">
+        # Welcome to My <new-collection-name> Projects
+        This is my <new-collection-name> project collection.
+    </div>
+
+    <!-- Traditional Chinese content -->
+    <div data-lang="zh-TW" style="display: none;">
+        # 歡迎來到<new-collection-name>專案
+        這是我的<new-collection-name>專案集合。
+    </div>
+
+### 4. create new collection posts folder ./_<new-collection-name> and add new collection posts ./_<new-collection-name>/<year>-<month>-<day>-<title>.md
+    ---
+    title: prac 1
+    tags: practice
+    date: 2024-03-01
+    ---
+    <div data-lang="en">
+    prac 1
+    </div>
+
+    <div data-lang="zh-TW" style="display: none;">
+    練習1！！
+    </div>
+
+
+
