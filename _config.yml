@@ -54,6 +54,9 @@ collections:
   animation:
     output: true
     permalink: /animation/:year/:month/:day/:title/
+  practice:
+    output: true
+    permalink: /practice/:year/:mouth/:day/:title/
 
 
 ## => Author and Social

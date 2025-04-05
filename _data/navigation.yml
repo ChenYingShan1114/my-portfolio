@@ -87,17 +87,19 @@ header:
 
   - titles:
       # @start locale config
-      en      : &EN       Gallery
+      en      : &EN       Practice
       en-GB   : *EN
       en-US   : *EN
       en-CA   : *EN
       en-AU   : *EN
-      zh-Hans : &ZH_HANS  艺廊
+      zh-Hans : &ZH_HANS  練習
       zh      : *ZH_HANS
       zh-CN   : *ZH_HANS
       zh-SG   : *ZH_HANS
-      zh-Hant : &ZH_HANT  藝廊
+      zh-Hant : &ZH_HANT  練習
       zh-TW   : *ZH_HANT
       zh-HK   : *ZH_HANT
       # @end locale config
-    url: /gallery.html
+    url: /practice.html
+  
+
