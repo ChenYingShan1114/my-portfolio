@@ -1,7 +1,7 @@
 ---
 title: Bouncing Ball Animation
 tags: Maya Animation
-date: 2025-03-16
+date: 2025-03-02
 ---
 <div data-lang="en">
     By setting the keyframe of ball in Maya software instead of solving equation of motion, I generated an animation about three kinds of ball animation motion. 
