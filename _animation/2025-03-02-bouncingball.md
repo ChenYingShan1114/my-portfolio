@@ -5,9 +5,9 @@ tags:
 - Character Animation
 date: 2025-03-02
 ---
-<div data-lang="en">
+<div data-lang="en"><font face="Georgia">
     By setting the keyframe of ball in Maya software instead of solving equation of motion, I generated an animation about three kinds of balls' animation motion. 
-</div>
+</font></div>
 
 <div data-lang="zh-TW" style="display: none;">
 動畫2！！

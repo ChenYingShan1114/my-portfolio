@@ -14,8 +14,8 @@ date: 2025-03-16
 </div>
 
 <!--more-->
-<div data-lang="en">
+<div data-lang="en"><font face="Georgia">
     The body followed the same rules when making the bouncing ball animation. However, the tail's motion follow the trajectory of body's motion to make the animation more natural. Before take off, the <em>anticipation</em> motion gives ball more energy to jump high and enjoys the platform with pendulum two more jumps.
     <br>
     <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/iknVytw2LSU?si=uRk79v5RN_5N-xu-&autoplay=1&loop=1&playlist=iknVytw2LSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-</div>
+</font></div>
