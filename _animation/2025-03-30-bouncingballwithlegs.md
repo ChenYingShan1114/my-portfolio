@@ -1,6 +1,8 @@
 ---
 title: Bouncing Ball with Legs Animation
-tags: Maya Animation
+tags:
+- Maya
+- Character Animation
 date: 2025-03-30
 ---
 <div data-lang="en">

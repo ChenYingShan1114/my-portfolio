@@ -1,6 +1,8 @@
 ---
-title: Walk Cycle
-tags: Maya Animation
+title: Walk Cycle Animation
+tags:
+- Maya
+- Character Animation
 date: 2025-04-13
 ---
 <div data-lang="en">

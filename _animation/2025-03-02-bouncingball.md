@@ -1,6 +1,8 @@
 ---
 title: Bouncing Ball Animation
-tags: Maya Animation
+tags:
+- Maya
+- Character Animation
 date: 2025-03-02
 ---
 <div data-lang="en">
